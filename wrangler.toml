@@ -1,4 +1,2 @@
 name = "popotan2542-github-io"
-type = "javascript"
-account_id = "{env.ACCOUNT_ID}"
 pages_build_output_dir = "public"
