@@ -1,15 +1,12 @@
 services:
-  popo_blog:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: popo_blog
-    ports:
-      - "8000:8000"
-      - "9000:9000"
-    volumes:
-      - .:/app
-    working_dir: /app
+  gatsby:
+    build: ./
+    container_name: gatsby
+    tty: true
     stdin_open: true
+    volumes:
+      - .:/gatsby
     environment:
       - NODE_ENV=development
+    ports:
+      - 8000:8000

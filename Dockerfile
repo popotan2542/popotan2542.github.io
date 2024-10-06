@@ -1,5 +1,9 @@
-FROM node:20-alpine
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git yarn python3 make g++  && \
-    yarn global add gatsby-cli
-EXPOSE 8000 9000
+FROM node:lts-bullseye-slim
+WORKDIR /gatsby
+RUN apt update && apt upgrade -y
+RUN apt install -y bash git python3 make g++
+# RUN npm install
+RUN yarn global add gatsby-cli
+COPY package*.json ./
+# RUN npm install ajv --save-dev
+# RUN npm install gatsby-source-newt gh-pages
