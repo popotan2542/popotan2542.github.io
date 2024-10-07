@@ -5,7 +5,7 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - .:/gatsby
+     - .:/app
     environment:
       - NODE_ENV=development
     ports:
